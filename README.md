@@ -1,8 +1,8 @@
 gPng
 ====
 
-**Awesome gravity air shuffle puck for the c64
-**
+*Awesome gravity air shuffle puck for the c64*
+
 
 gPng is a Shufflepuck - Pong mashup for the c64, with some gravity effects added as an extra spice. It is written in c using the compiler [cc65](http://www.cc65.org).
  
