@@ -1,0 +1,73 @@
+#ifndef SPRITE_CONSTANTS_H
+#define SPRITE_CONSTANTS_H
+
+#define SP0X 0xD000
+#define SP0Y 0xD001
+#define SP1X 0xD002
+#define SP1Y 0xD003
+#define SP2X 0xD004
+#define SP2Y 0xD005
+#define SP3X 0xD006
+#define SP3Y 0xD007
+#define SP4X 0xD008
+#define SP4Y 0xD009
+#define SP5X 0xD00A
+#define SP5Y 0xD00B
+#define SP6X 0xD00C
+#define SP6Y 0xD00D
+#define SP7X 0xD00E
+#define SP7Y 0xD00F
+
+#define SP0_DATAPTR 0x7F8
+#define SP1_DATAPTR 0x7F9
+#define SP2_DATAPTR 0x7FA
+#define SP3_DATAPTR 0x7FB
+#define SP4_DATAPTR 0x7FC
+#define SP5_DATAPTR 0x7FD
+#define SP6_DATAPTR 0x7FE
+#define SP7_DATAPTR 0x7FF
+
+#define SP0_COLOR 0xD027
+#define SP1_COLOR 0xD028
+#define SP2_COLOR 0xD029
+#define SP3_COLOR 0xD02A
+#define SP4_COLOR 0xD02B
+#define SP5_COLOR 0xD02C
+#define SP6_COLOR 0xD02D
+#define SP7_COLOR 0xD02E
+
+#define SP0_MULTICOLOR_BG 0xD021
+#define SP1_MULTICOLOR_BG 0xD022
+#define SP2_MULTICOLOR_BG 0xD023
+#define SP3_MULTICOLOR_BG 0xD024
+#define SP4_MULTICOLOR_BG 0xD025
+#define SP5_MULTICOLOR_BG 0xD026
+#define SP6_MULTICOLOR_BG 0xD027
+#define SP7_MULTICOLOR_BG 0xD028
+
+
+
+#define MSB_HORI_SPRITE 0xD010
+#define SP_ENABLE 0xD015  
+#define SP_EXAND_Y 0xD017
+#define SP_TO_FOREGROUND_PRIO 0xD01B  
+#define SP_MULTICOLOR 0xD01C
+#define SP_EXPAND_X 0xD01D
+#define SP_TO_SPRITE_COL 0xD01E
+#define SP_FOREGROUND_COL 0xD01F
+#define SP_MULTICOLOR0 0xD025
+#define SP_MULTICOLOR1 0xD026
+
+#define SP_DATA0 0x340
+#define SP_DATA1 0x380
+#define SP_DATA2 0x3C0
+#define SP_DATA3 0x800
+#define SP_DATA4 0x840
+#define SP_DATA5 0x880
+#define SP_DATA6 0x8C0
+#define SP_DATA7 0x900
+
+#define SPRITE_WIDTH (24)
+#define SPRITE_HEIGHT (21)
+
+#endif
