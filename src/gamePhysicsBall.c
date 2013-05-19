@@ -2,33 +2,33 @@
 #include "gPngStructPrint.h"
 #include <stdlib.h>
 /*
- CollisionDirection collideBallWithCourt(Ball *ball, Court *court)
- {
- //check collisions with the sides of the court
- //in the order of west, east, north, south
- //if there is a west or east collision, return
- //the goal result for each player respectively
- int n,s,w,e;
+  CollisionDirection collideBallWithCourt(Ball *ball, Court *court)
+  {
+  //check collisions with the sides of the court
+  //in the order of west, east, north, south
+  //if there is a west or east collision, return
+  //the goal result for each player respectively
+  int n,s,w,e;
 
- n = s = w = e = 0;
+  n = s = w = e = 0;
 
- //west & east
- if(ball->x < 0) {
- w = 1;
- } else if((ball->x+ball->width) > court->width) {
- e = 1;
- }
+  //west & east
+  if(ball->x < 0) {
+  w = 1;
+  } else if((ball->x+ball->width) > court->width) {
+  e = 1;
+  }
 
- //north & south
- if(ball->y < 0) {
- n = 1;
- } else if((ball->y + ball->height) > court->height) {
- s = 1;
- }
+  //north & south
+  if(ball->y < 0) {
+  n = 1;
+  } else if((ball->y + ball->height) > court->height) {
+  s = 1;
+  }
 
- return convertDirections(n, s, e, w);
- }
- */
+  return convertDirections(n, s, e, w);
+  }
+*/
 int isBottomCollision( Ball *ball, Paddle *paddle);
 int isTopCollision(Ball *ball, Paddle *paddle);
 
@@ -63,9 +63,9 @@ CollisionDirection collideBallWithCourt(Ball *ball, Court *court) {
 }
 
 unsigned char collideBallWithPaddleOne(Ball *ball, Paddle *paddle1, GPINT epsilon) {
-	// start out by checking if ball is "inside" the paddle
-	// in the west - east direction
-	// if so check the north-south axis as well
+    // start out by checking if ball is "inside" the paddle
+    // in the west - east direction
+    // if so check the north-south axis as well
     
     if (ball->x < (paddle1->x + paddle1->width)
 	&& (ball->x + ball->width) > paddle1->x) {
@@ -88,21 +88,21 @@ unsigned char collideBallWithPaddleOne(Ball *ball, Paddle *paddle1, GPINT epsilo
 
 	    // check the special case of top of a paddle collision
 	    if(ball->x < paddle1->x + paddle1->width - MAX_BALL_SPEED_X - MAX_PADDLE_SPEED_X)
-	    {
-		//approx good enough x for a top collision
-		//check if same goes for y
-		if(ball->y+ball->height < paddle1->y + MAX_BALL_SPEED_Y) {
-		    if(isTopCollision(ball, paddle1)) {
-			handleBallCollisionWithPaddle(ball, paddle1, 1, topCollision, epsilon);
-			return 1;
-		    }
-		} else if(ball->y+ball->height > paddle1->y + paddle1->height - MAX_BALL_SPEED_Y) {
-		    if(isBottomCollision(ball, paddle1)) {
-			handleBallCollisionWithPaddle(ball, paddle1, 0, bottomCollision, epsilon);
-			return 1;			
+		{
+		    //approx good enough x for a top collision
+		    //check if same goes for y
+		    if(ball->y+ball->height < paddle1->y + MAX_BALL_SPEED_Y) {
+			if(isTopCollision(ball, paddle1)) {
+			    handleBallCollisionWithPaddle(ball, paddle1, 1, topCollision, epsilon);
+			    return 1;
+			}
+		    } else if(ball->y+ball->height > paddle1->y + paddle1->height - MAX_BALL_SPEED_Y) {
+			if(isBottomCollision(ball, paddle1)) {
+			    handleBallCollisionWithPaddle(ball, paddle1, 0, bottomCollision, epsilon);
+			    return 1;			
+			}
 		    }
 		}
-	    }
 	    handleBallCollisionWithPaddle(ball, paddle1, 1, frontCollision, epsilon);
 	    return 1;
 	}

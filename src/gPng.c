@@ -58,20 +58,20 @@ void runLoop()
 
     while(1) {
 	if(currentGPngState == GAME_STATE_SINGLE || 
-		  currentGPngState == GAME_STATE_DOUBLE) {
+	   currentGPngState == GAME_STATE_DOUBLE) {
 	    runLoopGame();
 	} else {
-	        globalGameState->handleEventFPtr();
-		 globalGameState->updateFPtr();
-		 globalGameState->renderFPtr();
-		 newState = globalGameState->changeState(&gPngGame);
+	    globalGameState->handleEventFPtr();
+	    globalGameState->updateFPtr();
+	    globalGameState->renderFPtr();
+	    newState = globalGameState->changeState(&gPngGame);
 		 
-		 if(currentGPngState != newState) {
-		     changeState(newState);
-		 }
+	    if(currentGPngState != newState) {
+		changeState(newState);
+	    }
 	}
     }
- }
+}
 
 void runLoopGame() {
     GravPngScoreChange scoreChange;
