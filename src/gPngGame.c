@@ -85,6 +85,8 @@ void gameUpdate(GPngGame *gPngGame) {
         case PLAYER_TWO_GOAL:
             gPngGame->pointsPlayerTwo++;
             break;
+        case NO_GOAL:
+            break;
     }
     
     if(scoreChange == PLAYER_ONE_GOAL || scoreChange == PLAYER_TWO_GOAL) {
@@ -110,7 +112,7 @@ static unsigned char gravityCounter = 1;
 GravPngScoreChange updatePongGame(GPngGame *gPngGame)
 {
     char *hwCollision;
-    CollisionDirection padd1Court, padd2Court;
+
     //#define DEBUG_LOG
 #ifdef DEBUG_LOG
     static FILE *file;
@@ -124,8 +126,8 @@ GravPngScoreChange updatePongGame(GPngGame *gPngGame)
     
 #endif
     
-    padd1Court = collidePaddleOneWithCourt(gPngGame->paddleOne, gPngGame->court);
-    padd2Court = collidePaddleTwoWithCourt(gPngGame->paddleTwo, gPngGame->court);
+    collidePaddleOneWithCourt(gPngGame->paddleOne, gPngGame->court);
+    collidePaddleTwoWithCourt(gPngGame->paddleTwo, gPngGame->court);
     
     CollisionDirection ballCourt = collideBallWithCourt(gPngGame->ball, gPngGame->court);
     
