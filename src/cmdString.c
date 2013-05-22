@@ -5,7 +5,7 @@
 
 void printLine(unsigned char indent, 
 	       unsigned char row, 
-	       unsigned char* lineOfChars, 
+	       unsigned char* lineOfChars,
 	       int length)
 {
     unsigned char i;
@@ -23,8 +23,6 @@ void printLine(unsigned char indent,
 //25rows*40charcters = 1000
 void clearScreen(void)
 {
-    unsigned char row;
-    unsigned char column;
     unsigned char *vidMemPtr;
     unsigned char character = ' ';
     int i;
