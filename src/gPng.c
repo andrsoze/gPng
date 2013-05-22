@@ -75,8 +75,9 @@ void runLoop()
 
 void runLoopGame() {
     GravPngScoreChange scoreChange;
-
+    
     scoreChange = updatePongGame(&gPngGame);
+#ifndef FOREVER_GAME
     if(scoreChange == PLAYER_ONE_GOAL || scoreChange == PLAYER_TWO_GOAL) {
 	flashScreen();
 	currentGPngState = gameChangeState(&gPngGame);
@@ -85,13 +86,14 @@ void runLoopGame() {
 	    introDisplayInit();
 	    return;
 	} else {		
-
+	    
 
 	    resetPongGame(&gPngGame);
-
+	    
 	    printScores(&gPngGame);
 	}
     }
+#endif
     handlePlayerInput(&gPngGame, 1);
     handlePlayerInput(&gPngGame, 0);
     gameRenderGame(&gPngGame);
