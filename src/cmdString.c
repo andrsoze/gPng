@@ -5,7 +5,7 @@
 
 void printLine(unsigned char indent, 
 	       unsigned char row, 
-	       unsigned char* lineOfChars,
+	       char* lineOfChars,
 	       int length)
 {
     unsigned char i;
