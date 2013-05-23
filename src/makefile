@@ -3,10 +3,10 @@ CC65_HOME=/usr/local
 PROGRAM = gpng testPhysics testPong
 
 ifdef CC65_TARGET
-CC      = $(CC65_HOME)/bin/cl65 -DTARGET_C64 -DTARGET_TEST -O3
+CC      = $(CC65_HOME)/bin/cl65 -DTARGET_C64 -DTARGET_TEST -DFOREVER_GAME -O3
 else
 CC      = gcc
-CFLAGS  = -MMD -MP -O3
+CFLAGS  = -MMD -MP -O3 
 LDFLAGS = -Wl,-Map,$(PROGRAM).map
 endif
 
