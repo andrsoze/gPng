@@ -112,7 +112,7 @@ static unsigned char gravityCounter = 1;
 GravPngScoreChange updatePongGame(GPngGame *gPngGame)
 {
     char *hwCollision;
-
+    CollisionDirection ballCourt;
     //#define DEBUG_LOG
 #ifdef DEBUG_LOG
     static FILE *file;
@@ -129,7 +129,7 @@ GravPngScoreChange updatePongGame(GPngGame *gPngGame)
     collidePaddleOneWithCourt(gPngGame->paddleOne, gPngGame->court);
     collidePaddleTwoWithCourt(gPngGame->paddleTwo, gPngGame->court);
     
-    CollisionDirection ballCourt = collideBallWithCourt(gPngGame->ball, gPngGame->court);
+    ballCourt = collideBallWithCourt(gPngGame->ball, gPngGame->court);
     
 #ifdef TARGET_C64
     //optimize by checking the hardware register if there was a sprite collision involving the ball
@@ -230,5 +230,5 @@ void handlePlayerInput(GPngGame *gPngGame, int isPlayerOne) {
 void gameRenderGame(GPngGame *gPngGame) {
     drawBall(gPngGame->ball);
     drawPaddleSprites(gPngGame->paddleOne, gPngGame->paddleTwo);
-    drawArrow(gPngGame->gravityDirection);
+    drawArrow();
 }
