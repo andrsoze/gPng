@@ -76,7 +76,7 @@ void runLoop()
 void runLoopGame() {
     GravPngScoreChange scoreChange;
     
-    scoreChange = updatePongGame(&gPngGame);
+    // scoreChange = updatePongGame(&gPngGame);
 #ifndef FOREVER_GAME
     if(scoreChange == PLAYER_ONE_GOAL || scoreChange == PLAYER_TWO_GOAL) {
 	flashScreen();
