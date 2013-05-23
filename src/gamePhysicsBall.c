@@ -321,37 +321,38 @@ void updateBallNorthCollision(Ball* ball, Court *court) {
 void handleBallCollision(Ball *ball, Court *court, CollisionDirection cd) {
     
     switch (cd) {
-        case nCollision:
-            updateBallNorthCollision(ball, court);
-            break;
-        case sCollision:
-            updateBallSouthCollision(ball, court);
-            break;
-        case wCollision:
-            updateBallWestCollision(ball, court);
-            break;
-        case eCollision:
-            updateBallEastCollision(ball, court);
-            break;
-        case nWCollision:
-            updateBallNorthCollision(ball, court);
-            updateBallWestCollision(ball, court);
-            break;
-        case nECollision:
-            updateBallNorthCollision(ball, court);
-            updateBallEastCollision(ball, court);
-            break;
-        case sWCollision:
-            updateBallSouthCollision(ball, court);
-            updateBallWestCollision(ball, court);
-            break;
-        case sECollision:
-            updateBallSouthCollision(ball, court);
-            updateBallEastCollision(ball, court);
-            break;
-        default:
-            assert(0);
-    }
-    
+    case nCollision:
+	updateBallNorthCollision(ball, court);
+	break;
+    case sCollision:
+	updateBallSouthCollision(ball, court);
+	break;
+    case wCollision:
+	updateBallWestCollision(ball, court);
+	break;
+    case eCollision:
+	updateBallEastCollision(ball, court);
+	break;
+    case nWCollision:
+	updateBallNorthCollision(ball, court);
+	updateBallWestCollision(ball, court);
+	break;
+    case nECollision:
+	updateBallNorthCollision(ball, court);
+	updateBallEastCollision(ball, court);
+	break;
+    case sWCollision:
+	updateBallSouthCollision(ball, court);
+	updateBallWestCollision(ball, court);
+	break;
+    case sECollision:
+	updateBallSouthCollision(ball, court);
+	updateBallEastCollision(ball, court);
+	break;
+    case noCollision:
+	break;
+    default :
+	assert(0);
+    }   
 }
 
