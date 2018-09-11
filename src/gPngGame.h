@@ -17,8 +17,8 @@ void gameUpdate(GPngGame *gPngGame);
 void resetPongGame(GPngGame *gPngGame);
 void gameRenderGame(GPngGame *gPngGame);
 GPngState gameChangeState(GPngGame * gPngGame);
-void gameDisplayInit();
-void gameClean();
+void gameDisplayInit(void);
+void gameClean(void);
 //private
 GravPngScoreChange updatePongGame(GPngGame *gPngGame);
 void updatePongGamePositions(Ball *ball, Paddle *paddleOne, Paddle *paddleTwo);

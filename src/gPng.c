@@ -19,9 +19,9 @@ Paddle paddleTwo;
 Court court;
 GPngGame gPngGame;
 
-void assembleDefaultPongGame();
+void assembleDefaultPongGame(void);
 void setupNewGame(int numHumanPlayers);
-void runLoopGame();
+void runLoopGame(void);
 
 int main()
 {
@@ -51,7 +51,7 @@ int main()
     
 }
 
-void runLoop()
+void runLoop(void)
 {
     GPngState newState;
 
@@ -73,7 +73,7 @@ void runLoop()
     }
 }
 
-void runLoopGame() {
+void runLoopGame(void) {
     GravPngScoreChange scoreChange;
     
     scoreChange = updatePongGame(&gPngGame);
@@ -146,7 +146,7 @@ void setupNewGame(int numHumanPlayers) {
     printScores(&gPngGame);
 }
 
-void assembleDefaultPongGame() {
+void assembleDefaultPongGame(void) {
     gPngGame.ball = &ball;
     gPngGame.paddleOne = &paddleOne;
     gPngGame.paddleTwo = &paddleTwo;

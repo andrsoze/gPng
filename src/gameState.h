@@ -23,7 +23,7 @@ typedef struct GAME_STATE {
     void (*updateFPtr)(void);
     void (*renderFPtr)(void);
     void (*clean)(void);
-    GPngState (*changeState)();
+    GPngState (*changeState)(GPngGame*);
 } GameState;
 
 

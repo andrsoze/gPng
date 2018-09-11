@@ -12,7 +12,7 @@ CollisionDirection convertDirections(int n, int s, int e, int w);
 
 void applyGravity(GPngGame *gPngGame, unsigned char gravityCounter);
 void updateGravity(GPngGame *gPngGame);
-GravityDirection randomGravityDirection();
+GravityDirection randomGravityDirection(void);
 void updateBall(Ball *ball, GPINT friction);
 void updatePaddle(Paddle *paddle, GPINT friction);
 void updatePaddleOne(Paddle *paddle1);
