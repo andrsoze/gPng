@@ -182,7 +182,7 @@ void updatePongGamePositions(Ball *ball, Paddle *paddleOne, Paddle *paddleTwo)
     updatePaddle(paddleTwo, sFriction);
 }
 
-void gameDisplayInit() {
+void gameDisplayInit(void) {
 	char *pokePtr;
 	pokePtr = (char*)53280l;
 	(*pokePtr) = 0;
@@ -195,7 +195,7 @@ void gameDisplayInit() {
     
 }
 
-void gameClean() {
+void gameClean(void) {
     printf("gameClean not implemented\n");
 }
 

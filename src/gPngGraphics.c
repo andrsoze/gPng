@@ -82,7 +82,7 @@ void drawBall(Ball * ball)
     *(pokePtr) |= 1;
 }
 
-void drawArrow() {
+void drawArrow(void) {
     char *pokePtr;
     char x,y;
  
@@ -103,7 +103,7 @@ void drawArrow() {
     *(pokePtr) |= 8;  
 }
 
-void setupGameColors() {
+void setupGameColors(void) {
     char *p = ((char *)53280l); //border
     
     *p = 11;
@@ -174,7 +174,7 @@ void setMsb(GPINT x, char index)
 }
 
 
-void fillSpriteMem()
+void fillSpriteMem(void)
 {
     char * pokePtr;
     char i;	
@@ -205,7 +205,7 @@ void fillArrowSpriteMem(GravityDirection direction) {
     }
 }
 
-void setupSpriteMemPtrs()
+void setupSpriteMemPtrs(void)
 {
     char * pokePtr;
     

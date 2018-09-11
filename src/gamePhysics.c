@@ -3,7 +3,7 @@
 #include <time.h>
 
 static int firstTimeRandom = 1;
-GravityDirection randomGravityDirection() {
+GravityDirection randomGravityDirection(void) {
     int randomNumber;
     if(firstTimeRandom) {
 	srand(time(NULL));

@@ -17,14 +17,14 @@ void introDisplayInit(void);
 void introHandleEvent(void);
 void introUpdate(void);
 void introRender(void);
-void introClean();
-GPngState introChangeState();
+void introClean(void);
+GPngState introChangeState(GPngGame *gPngGame);
 //--graphics
-void setupIntroSpriteMemPtrs();
-void fillIntroSpriteMem();
-void drawSprite();
+void setupIntroSpriteMemPtrs(void);
+void fillIntroSpriteMem(void);
+void drawSprite(void);
 //--menu
-void moveMenuUp();
-void moveMenuDown();
+void moveMenuUp(void);
+void moveMenuDown(void);
 
 #endif

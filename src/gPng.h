@@ -6,7 +6,7 @@ static GameState *globalGameState;
 
 
 
-void runLoop();
+void runLoop(void);
 void changeState(GPngState newState);
 void setupInterrupt();
 

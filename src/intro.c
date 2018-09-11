@@ -16,7 +16,7 @@ static char buttonPressed;
 void initGameObjects(int isOnePlayer, GPngGame *gPngGame);
 
 //graphics
-void fillSpriteMem();
+void fillSpriteMem(void);
 
 char menuAlternativeStrings[][20] = { "one player game", "two player game",
 				      "how to play" };
@@ -56,7 +56,7 @@ void introHandleEvent(void) {
 
 }
 
-void moveMenuUp() {
+void moveMenuUp(void) {
     if (selectedAlternative == TwoPlayerGame) {
 	selectedAlternative = OnePlayerGame;
     } else if (selectedAlternative == HowToPlay) {
@@ -64,7 +64,7 @@ void moveMenuUp() {
     }
 }
 
-void moveMenuDown() {
+void moveMenuDown(void) {
     if (selectedAlternative == OnePlayerGame) {
 	selectedAlternative = TwoPlayerGame;
     } else if (selectedAlternative == TwoPlayerGame) {
@@ -72,7 +72,7 @@ void moveMenuDown() {
     }
 }
 
-void introUpdate() {
+void introUpdate(void) {
 
 }
 
@@ -115,19 +115,19 @@ void introDisplayInit(void) {
     }
 }
 
-void introClean() {
+void introClean(void) {
     
 }
 
 //--graphics
-void setupIntroSpriteMemPtrs() {
+void setupIntroSpriteMemPtrs(void) {
     char * pokePtr;
     
     pokePtr = (char *) SP0_DATAPTR;
     *(pokePtr) = 13;
 }
 
-void fillIntroSpriteMem() {
+void fillIntroSpriteMem(void) {
     char * pokePtr;
     char i;
     
@@ -137,7 +137,7 @@ void fillIntroSpriteMem() {
     }
 }
 
-void drawSprite() {
+void drawSprite(void) {
     unsigned int x, y;
     char *pokePtr;
     // calc x
