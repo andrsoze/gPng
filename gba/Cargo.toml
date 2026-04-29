@@ -1,0 +1,19 @@
+[package]
+name = "gpng-gba"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+agb = "0.23.1"
+
+[profile.dev]
+opt-level = 3
+debug = true
+
+[profile.dev.build-override]
+opt-level = 3
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+debug = true

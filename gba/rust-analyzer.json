@@ -1,0 +1,9 @@
+{
+  "cargo": {
+    "target": "thumbv4t-none-eabi",
+    "features": "all"
+  },
+  "checkOnSave": {
+    "allTargets": false
+  }
+}

@@ -1,0 +1,13 @@
+[unstable]
+build-std = ["core", "alloc"]
+build-std-features = ["compiler-builtins-mem"]
+
+[build]
+target = "thumbv4t-none-eabi"
+
+[target.thumbv4t-none-eabi]
+runner = ["mgba-qt", "-C", "logToStdout=1", "-C", "logLevel.gba.debug=127"]
+rustflags = ["-C", "link-arg=-Tgba.ld", "-C", "target-cpu=arm7tdmi", "-C", "force-frame-pointers=yes"]
+
+[target.armv4t-none-eabi]
+rustflags = ["-C", "link-arg=-Tgba.ld", "-C", "target-cpu=arm7tdmi", "-C", "force-frame-pointers=yes"]
