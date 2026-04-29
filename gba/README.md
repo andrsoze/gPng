@@ -168,6 +168,24 @@ edges, vertically centred — same layout as the C64 version.
 
 ---
 
+## References
+
+### agb (the Rust library)
+- [agb book](https://agbrs.dev/book/) — tutorials for backgrounds, sprites, sound, and more; start here
+- [agb API docs](https://docs.rs/agb/0.23.1/agb/) — full API reference for the version used in this project
+- [agb GitHub](https://github.com/agbrs/agb) — source, examples, and changelog; the `examples/` directory is very useful
+
+### GBA hardware references
+- [GBATEK](https://problemkaputt.de/gbatek.htm) — the definitive low-level reference for the GBA (and NDS). Covers every hardware register, the memory map, PPU, DMA, timers, sound — everything. Dense but exhaustive. Bookmark it.
+- [Tonc](https://www.coranac.com/tonc/text/) — the best GBA programming tutorial. Written for C but all the hardware concepts apply directly. Covers tile modes, affine backgrounds, sprites, fixed-point math, and DMA in depth.
+- [GBADev.net](https://gbadev.net/) — community hub with links to tools, forums, and additional guides
+
+### Rust embedded / no_std
+- [The Embedded Rust Book](https://docs.rust-embedded.org/book/) — general guide to writing Rust for bare-metal targets; good background for understanding `no_std`
+- [The Rustonomicon](https://doc.rust-lang.org/nomicon/) — deep dive into unsafe Rust; relevant when you start reading hardware registers directly
+
+---
+
 ## Next steps
 
 - [ ] Add fixed-point gravity using `agb_fixnum`
