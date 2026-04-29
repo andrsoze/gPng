@@ -6,20 +6,6 @@
 //
 // agb sprite workflow:
 //   1. Define sprite pixels via include_aseprite!() or include_gfx!() at compile time
-//   2. Allocate sprites from OamManaged each frame
-//   3. Set position and show
-//
-// For now this module holds the render call structure; actual sprite data
-// and tile definitions will be added once assets exist.
-
-// GBA graphics use Mode 0: tiled backgrounds + OBJ (sprite) layer
-//
-// The plan:
-//   - Background layer 0: arena (court lines, border)
-//   - OBJ (sprites): ball and paddles
-//
-// agb sprite workflow:
-//   1. Define sprite pixels via include_aseprite!() or include_gfx!() at compile time
 //   2. Get an OamIterator from the GraphicsFrame each VBlank
 //   3. Set position and show each sprite
 //
