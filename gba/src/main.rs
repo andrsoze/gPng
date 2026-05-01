@@ -9,25 +9,42 @@ extern crate alloc;
 mod game;
 mod graphics;
 mod player;
+mod splash;
 
 use agb::Gba;
 use game::{GameState, PlayState};
+use splash::SplashScreen;
 
 #[agb::entry]
 fn main(mut gba: Gba) -> ! {
     let mut input = agb::input::ButtonController::new();
-    let mut state = GameState::Playing(PlayState::new());
+    let mut gfx = gba.graphics.get();
+
+    let mut splash = SplashScreen::new();
+    let mut state = GameState::Title;
 
     loop {
         input.update();
 
-        if let GameState::Playing(ref mut play) = state {
-            player::handle_input(&input, play);
-            play.update();
-            graphics::render(play);
+        let mut frame = gfx.frame();
+
+        match &mut state {
+            GameState::Title => {
+                splash.show(&mut frame);
+
+                // Any button press moves to the game
+                if input.is_just_pressed(agb::input::Button::Start) {
+                    state = GameState::Playing(PlayState::new());
+                }
+            }
+            GameState::Playing(play) => {
+                player::handle_input(&input, play);
+                play.update();
+                graphics::render(play);
+            }
+            GameState::Winner(_) => {}
         }
 
-        // Wait for VBlank before updating OAM / flipping
-        agb::halt();
+        frame.commit();
     }
 }
